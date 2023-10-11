@@ -1,0 +1,37 @@
+1. App.js:
+
+APIs starting with same can be clubbed in one router file and can be called like this:
+
+example:
+
+app.use('api/v1/product')
+
+==============================================================================================
+
+2. Routes:
+
+    a. we can have same api with different methods
+    b. we can have different api starting with same  
+
+example:
+
+    router.get('/', function which takes request and response as parameters)             //now this would mean 'api/v1/product'
+    router.post('/', function which takes request and response as parameters)
+    router.put('/1', function which takes request and response)                          //now this would mean 'api/v1/product/1'
+    router.delete('/1', function which takes request and response)
+    .
+    .
+    .
+
+    NOTE: we can make it look more simple by using chaining, like this
+    router.route('/').get(function).post(function)
+    router.route('/1').put(function).delete(function)
+
+==============================================================================================
+
+3. controllers
+
+Now the above mentioned functions can be seperated and stored in the controller (to achieve MVC architecture).
+
+here we just keep pure logic functions. (ex getProduct, deleteProduct, etc.)
+
