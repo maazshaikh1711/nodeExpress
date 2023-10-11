@@ -48,7 +48,7 @@ app.get('/api/v1/query', (req, res) => {
   }
   if (sortedProducts.length < 1) {
     // res.status(200).send('no products matched your search');
-    return res.status(200).json({ sucess: true, data: [] })
+    return res.status(200).json({ sucess: true, data: [] })           //return is required here, coz if we don't it will come out of "if" statement and again try to run another res.send or res.json, etc after this and that would give an error
   }
   res.status(200).json(sortedProducts)
 })
