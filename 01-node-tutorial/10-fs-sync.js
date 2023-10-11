@@ -1,12 +1,13 @@
-const { readFileSync, writeFileSync } = require('fs')
-console.log('start')
-const first = readFileSync('./content/first.txt', 'utf8')
-const second = readFileSync('./content/second.txt', 'utf8')
+const { readFileSync, writeFileSync } = require('fs');
+
+const firstFileContent = readFileSync('./content/first.txt', 'utf8');
+const secondFileContent = readFileSync('./content/second.txt','utf8')
+
+console.log(firstFileContent)
+console.log(secondFileContent)
 
 writeFileSync(
   './content/result-sync.txt',
-  `Here is the result : ${first}, ${second}`,
-  { flag: 'a' }
-)
-console.log('done with this task')
-console.log('starting the next one')
+  `The final result is: \n${firstFileContent} -- ${secondFileContent} `,
+  {flag: 'a'}       //denotes it just appends and not overwrite
+  );
